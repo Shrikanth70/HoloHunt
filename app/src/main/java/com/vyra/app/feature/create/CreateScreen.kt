@@ -24,7 +24,10 @@ import com.vyra.app.core.designsystem.component.CreateOptionCard
  * action that goes nowhere.
  */
 @Composable
-fun CreateScreen(modifier: Modifier = Modifier) {
+fun CreateScreen(
+    onModeSelected: (CreateMode) -> Unit = {},
+    modifier: Modifier = Modifier,
+) {
     Column(
         modifier = modifier
             .fillMaxSize()
@@ -50,6 +53,7 @@ fun CreateScreen(modifier: Modifier = Modifier) {
                 description = stringResource(mode.subtitleRes),
                 icon = mode.icon,
                 modifier = Modifier.fillMaxWidth(),
+                onClick = { onModeSelected(mode) },
             )
             Spacer(Modifier.height(12.dp))
         }

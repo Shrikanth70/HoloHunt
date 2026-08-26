@@ -7,8 +7,8 @@
 # Project Status
 
 ```text
-Current Phase: Phase 1
-Overall Progress: 10%
+Current Phase: Phase 2
+Overall Progress: 20%
 Status: IN PROGRESS
 ```
 
@@ -16,18 +16,18 @@ Status: IN PROGRESS
 
 ```text
 Working On:
-- Phase 1: Media Foundation
+- Phase 2: AI Subject Extraction
 
 Next:
-- Camera permission handling
-- Camera preview & capture
-- Gallery picker
+- Select initial segmentation approach
+- Create inference interface
+- Implement local inference
 
 Blockers:
 - None
 
 Last Completed:
-- Phase 0: Project Foundation (build, tests, CI, git)
+- Phase 1: Media Foundation (CameraX, VideoCapture, Gallery picker, Validation, Metadata, Preview flow)
 ```
 
 ---
@@ -77,16 +77,16 @@ Build reliable camera and gallery media acquisition.
 
 ### Tasks
 
-* [ ] Camera permission handling
-* [ ] Camera preview
-* [ ] Image capture
-* [ ] Video capture foundation
-* [ ] Gallery image picker
-* [ ] Gallery video picker
-* [ ] Media validation
-* [ ] Media metadata extraction
-* [ ] Local temporary media management
-* [ ] Error handling
+* [x] Camera permission handling
+* [x] Camera preview
+* [x] Image capture
+* [x] Video capture foundation
+* [x] Gallery image picker
+* [x] Gallery video picker
+* [x] Media validation
+* [x] Media metadata extraction
+* [x] Local temporary media management
+* [x] Error handling
 
 ### Acceptance Criteria
 
@@ -117,7 +117,7 @@ Continue
 ### Status
 
 ```text
-NOT STARTED
+COMPLETE ✅
 ```
 
 ---

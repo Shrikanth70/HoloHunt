@@ -39,4 +39,27 @@
 
     <!-- Profile -->
     <string name="profile_title">Profile</string>
+
+    <!-- Camera & Capture -->
+    <string name="capture_photo_tab">PHOTO</string>
+    <string name="capture_video_tab">VIDEO</string>
+    <string name="capture_flip_camera">Flip camera</string>
+    <string name="capture_flash_toggle">Flash mode</string>
+    <string name="capture_gallery_button">Open gallery</string>
+    <string name="capture_take_photo">Take photo</string>
+    <string name="capture_start_recording">Start recording</string>
+    <string name="capture_stop_recording">Stop recording</string>
+    <string name="capture_close">Close camera</string>
+    <string name="camera_permission_title">Camera Access Needed</string>
+    <string name="camera_permission_description">VYRA needs camera access to capture subjects, record videos, and power augmented reality.</string>
+    <string name="camera_permission_grant">Grant Permission</string>
+    <string name="camera_permission_denied_settings">Open Settings</string>
+
+    <!-- Media Preview -->
+    <string name="preview_title">Preview</string>
+    <string name="preview_retake">Retake</string>
+    <string name="preview_accept">Accept &amp; Continue</string>
+    <string name="preview_use_photo">Use Photo</string>
+    <string name="preview_use_video">Use Video</string>
+    <string name="preview_meta_badge">%1$s • %2$s</string>
 </resources>
