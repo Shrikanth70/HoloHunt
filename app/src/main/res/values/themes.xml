@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- Base application theme. The UI is Jetpack Compose; this XML theme only
+         controls the pre-Compose window (background + system bars) to avoid a
+         white flash on launch. Colors mirror DESIGN.md surface tokens. -->
+    <style name="Theme.VYRA" parent="@android:style/Theme.Material.NoActionBar">
+        <item name="android:windowBackground">@color/vyra_surface</item>
+        <item name="android:statusBarColor">@android:color/transparent</item>
+        <item name="android:navigationBarColor">@android:color/transparent</item>
+        <item name="android:windowLightStatusBar">false</item>
+        <item name="android:windowLightNavigationBar">false</item>
+    </style>
+</resources>

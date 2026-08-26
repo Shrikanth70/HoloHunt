@@ -1,0 +1,42 @@
+<resources>
+    <string name="app_name">VYRA</string>
+
+    <!-- Navigation -->
+    <string name="nav_home">Home</string>
+    <string name="nav_create">Create</string>
+    <string name="nav_library">Library</string>
+    <string name="nav_profile">Profile</string>
+
+    <!-- Home -->
+    <string name="home_hero_title">Put anything anywhere.</string>
+    <string name="home_hero_subtitle">Turn your photos into things you can play with.</string>
+    <string name="home_cta_create">Create</string>
+    <string name="home_cta_try_ar">Try AR</string>
+    <string name="home_section_create">Create something new</string>
+    <string name="home_section_creations">Your creations</string>
+    <string name="home_creations_empty">Nothing here yet. Your creations will appear once you make one.</string>
+    <string name="home_avatar_cd">Open profile</string>
+    <string name="home_brand_cd">VYRA</string>
+
+    <!-- Create -->
+    <string name="create_title">Create</string>
+    <string name="create_subtitle">Choose how you want to start.</string>
+
+    <!-- Profile -->
+    <string name="profile_subtitle">Your account and preferences will live here.</string>
+
+    <!-- Create options -->
+    <string name="create_ar_title">AR</string>
+    <string name="create_ar_subtitle">Place it in the real world</string>
+    <string name="create_cutout_title">Cutout</string>
+    <string name="create_cutout_subtitle">Turn a photo into a subject</string>
+    <string name="create_remix_title">Remix</string>
+    <string name="create_remix_subtitle">Create a visual scene</string>
+
+    <!-- Library -->
+    <string name="library_title">Library</string>
+    <string name="library_empty">No subjects yet. Cut one out of a photo to reuse it anywhere.</string>
+
+    <!-- Profile -->
+    <string name="profile_title">Profile</string>
+</resources>

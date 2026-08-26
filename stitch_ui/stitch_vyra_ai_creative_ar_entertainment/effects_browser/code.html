@@ -1,0 +1,297 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>VYRA - Effects Browser</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            "colors": {
+                    "secondary-fixed-dim": "#c8c6c8",
+                    "on-primary": "#00363a",
+                    "surface-dim": "#0d1515",
+                    "on-secondary": "#303032",
+                    "on-error": "#690005",
+                    "on-secondary-container": "#b7b4b7",
+                    "inverse-primary": "#006970",
+                    "on-tertiary-fixed-variant": "#474649",
+                    "inverse-on-surface": "#2a3233",
+                    "surface-container": "#192122",
+                    "tertiary-fixed-dim": "#c8c6c8",
+                    "surface-container-high": "#232b2c",
+                    "outline-variant": "#3b494b",
+                    "on-primary-fixed": "#002022",
+                    "error-container": "#93000a",
+                    "primary-fixed-dim": "#00dbe9",
+                    "tertiary-fixed": "#e4e2e4",
+                    "tertiary-container": "#dbd9db",
+                    "primary-container": "#00f0ff",
+                    "secondary-fixed": "#e4e2e4",
+                    "on-primary-fixed-variant": "#004f54",
+                    "on-error-container": "#ffdad6",
+                    "surface": "#0d1515",
+                    "on-tertiary-fixed": "#1b1b1d",
+                    "on-primary-container": "#006970",
+                    "surface-container-lowest": "#080f10",
+                    "on-secondary-fixed-variant": "#474649",
+                    "surface-variant": "#2e3637",
+                    "primary": "#dbfcff",
+                    "on-background": "#dce4e5",
+                    "error": "#ffb4ab",
+                    "on-secondary-fixed": "#1b1b1d",
+                    "on-tertiary-container": "#5f5e61",
+                    "primary-fixed": "#7df4ff",
+                    "secondary-container": "#474649",
+                    "inverse-surface": "#dce4e5",
+                    "on-surface": "#dce4e5",
+                    "background": "#0d1515",
+                    "surface-container-highest": "#2e3637",
+                    "outline": "#849495",
+                    "on-surface-variant": "#b9cacb",
+                    "on-tertiary": "#303032",
+                    "surface-container-low": "#151d1e",
+                    "surface-tint": "#00dbe9",
+                    "surface-bright": "#333b3b",
+                    "secondary": "#c8c6c8",
+                    "tertiary": "#f8f5f8"
+            },
+            "borderRadius": {
+                    "DEFAULT": "0.25rem",
+                    "lg": "0.5rem",
+                    "xl": "0.75rem",
+                    "full": "9999px"
+            },
+            "spacing": {
+                    "gutter-mobile": "12px",
+                    "unit": "8px",
+                    "lg": "24px",
+                    "sm": "8px",
+                    "md": "16px",
+                    "xs": "4px",
+                    "2xl": "48px",
+                    "xl": "32px",
+                    "margin-mobile": "20px"
+            },
+            "fontFamily": {
+                    "label-sm": [
+                            "Inter"
+                    ],
+                    "body-lg": [
+                            "Inter"
+                    ],
+                    "body-md": [
+                            "Inter"
+                    ],
+                    "label-md": [
+                            "Inter"
+                    ],
+                    "display-lg": [
+                            "Inter"
+                    ],
+                    "headline-lg": [
+                            "Inter"
+                    ],
+                    "headline-md": [
+                            "Inter"
+                    ]
+            },
+            "fontSize": {
+                    "label-sm": [
+                            "12px",
+                            {
+                                    "lineHeight": "16px",
+                                    "letterSpacing": "0.1em",
+                                    "fontWeight": "600"
+                            }
+                    ],
+                    "body-lg": [
+                            "18px",
+                            {
+                                    "lineHeight": "28px",
+                                    "fontWeight": "400"
+                            }
+                    ],
+                    "body-md": [
+                            "16px",
+                            {
+                                    "lineHeight": "24px",
+                                    "fontWeight": "400"
+                            }
+                    ],
+                    "label-md": [
+                            "14px",
+                            {
+                                    "lineHeight": "20px",
+                                    "letterSpacing": "0.05em",
+                                    "fontWeight": "500"
+                            }
+                    ],
+                    "display-lg": [
+                            "44px",
+                            {
+                                    "lineHeight": "52px",
+                                    "letterSpacing": "-0.02em",
+                                    "fontWeight": "700"
+                            }
+                    ],
+                    "headline-lg": [
+                            "32px",
+                            {
+                                    "lineHeight": "40px",
+                                    "letterSpacing": "-0.01em",
+                                    "fontWeight": "600"
+                            }
+                    ],
+                    "headline-md": [
+                            "24px",
+                            {
+                                    "lineHeight": "32px",
+                                    "fontWeight": "600"
+                            }
+                    ]
+            }
+          }
+        }
+      }
+    </script>
+<style>
+        .cyberpunk-grid {
+            background-size: 40px 40px;
+            background-image: linear-gradient(to right, rgba(255, 255, 255, 0.05) 1px, transparent 1px),
+                              linear-gradient(to bottom, rgba(255, 255, 255, 0.05) 1px, transparent 1px);
+        }
+        .hide-scrollbar::-webkit-scrollbar {
+            display: none;
+        }
+        .hide-scrollbar {
+            -ms-overflow-style: none;
+            scrollbar-width: none;
+        }
+    </style>
+</head>
+<body class="bg-background text-on-surface font-body-md min-h-screen overflow-hidden selection:bg-primary-container selection:text-on-primary-container">
+<!-- Simulated AR Camera Background -->
+<div class="fixed inset-0 z-0">
+<div class="absolute inset-0 bg-cover bg-center filter blur-md transform scale-105" data-alt="A futuristic cyberpunk cityscape at night, illuminated by neon pink and electric cyan signs. Flying vehicles leave light trails in the distance. The mood is immersive, high-tech, and cinematic, reflecting a premium dark-chrome aesthetic suitable for an augmented reality background." style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuDBvwwyv_fvQvk7nW2_v0jLHl2W9tkJ09La0fmfYzT1A04L9wyvmDpyd-88qVyZTqbWqvJkwvAGZ9PhEnckpRB-6QGFt3mItVvqF7x5BUjDgCKwQZqQOzPJQKxhCwOB34OkhzPEUZ64-TdjupInU3sJDeHueaCWUO_DA25hVmbk3KGDFTewfRfYB-ICIGRwkUAj2nnHKYXWBG_hVPUM_7m6-2lryCIgc0Jr9PvKG-8xGSj9KcDqHF_Lig')">
+</div>
+<!-- Vignette -->
+<div class="absolute inset-0 bg-gradient-to-b from-background/30 via-transparent to-background/80 pointer-events-none"></div>
+</div>
+<!-- UI Overlay container -->
+<div class="relative z-10 w-full h-screen flex flex-col justify-end">
+<!-- Bottom Sheet -->
+<div class="bg-surface-container/90 backdrop-blur-2xl w-full rounded-t-2xl shadow-[0_-8px_32px_rgba(0,0,0,0.5)] border-t border-white/10 flex flex-col h-[65vh] transition-transform duration-300 ease-in-out">
+<!-- Drag Handle Area -->
+<div class="w-full flex justify-center pt-unit pb-md cursor-grab active:cursor-grabbing">
+<div class="w-12 h-1.5 bg-on-surface-variant/40 rounded-full"></div>
+</div>
+<!-- Header & Filters -->
+<div class="px-margin-mobile pb-md flex flex-col gap-md border-b border-white/5">
+<div class="flex justify-between items-center">
+<h2 class="font-headline-md text-headline-md font-bold text-primary">Effects</h2>
+<button class="p-2 rounded-full hover:bg-white/5 transition-colors">
+<span class="material-symbols-outlined text-on-surface-variant">search</span>
+</button>
+</div>
+<!-- Chips Horizontal Scroll -->
+<div class="flex overflow-x-auto hide-scrollbar gap-sm pb-2">
+<button class="px-md py-2 rounded-full bg-primary/10 border border-primary text-primary font-label-md text-label-md whitespace-nowrap shadow-[inset_0_0_8px_rgba(0,240,255,0.2)]">
+                        All
+                    </button>
+<button class="px-md py-2 rounded-full bg-surface-variant/50 border border-white/10 text-on-surface-variant hover:text-on-surface hover:bg-surface-variant/80 transition-all font-label-md text-label-md whitespace-nowrap">
+                        Fun
+                    </button>
+<button class="px-md py-2 rounded-full bg-surface-variant/50 border border-white/10 text-on-surface-variant hover:text-on-surface hover:bg-surface-variant/80 transition-all font-label-md text-label-md whitespace-nowrap">
+                        Motion
+                    </button>
+<button class="px-md py-2 rounded-full bg-surface-variant/50 border border-white/10 text-on-surface-variant hover:text-on-surface hover:bg-surface-variant/80 transition-all font-label-md text-label-md whitespace-nowrap">
+                        Looks
+                    </button>
+<button class="px-md py-2 rounded-full bg-surface-variant/50 border border-white/10 text-on-surface-variant hover:text-on-surface hover:bg-surface-variant/80 transition-all font-label-md text-label-md whitespace-nowrap">
+                        Sci-Fi
+                    </button>
+</div>
+</div>
+<!-- Effects Grid -->
+<div class="flex-1 overflow-y-auto px-margin-mobile py-md">
+<div class="grid grid-cols-2 md:grid-cols-3 gap-md pb-[100px]"> <!-- Extra padding bottom for nav bar -->
+<!-- Active Effect: Float -->
+<div class="relative aspect-[3/4] rounded-xl overflow-hidden group cursor-pointer border border-primary shadow-[0_0_15px_rgba(0,240,255,0.3)] ring-1 ring-primary">
+<img class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105" data-alt="A person hovering in mid-air in a futuristic alleyway. They are surrounded by a subtle electric cyan glowing aura. The visual style is highly detailed, high-contrast dark chrome aesthetic, cinematic lighting." src="https://lh3.googleusercontent.com/aida-public/AB6AXuD7fCMhpzMp_I4sxiLZB33B9-Z4Ls-mMCLG90lnbefzrwOV0IlW0fIF9dwNrf0dZO6n_hIOSLTENt8f46o3HJ0CjQS1ZUead9-SEJHCjEc_ltKqjw7xf9K49OZ9RgQhfJV9g-0RTYf-RZURogN6nrKJI81ezmPOQxvb_S5ljbSiDJBsQcXZ4Sr7aL4ryrRE1lsojUM9aS2K91JPRugUItBv94GYYugdfAYy5rTLmVGvWQVZKZ1cenu1OQ"/>
+<div class="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent"></div>
+<div class="absolute bottom-sm left-sm right-sm flex justify-between items-end">
+<span class="font-label-md text-label-md font-semibold text-primary drop-shadow-md">Float</span>
+<span class="material-symbols-outlined text-primary text-[18px]">check_circle</span>
+</div>
+</div>
+<!-- Effect: Clone -->
+<div class="relative aspect-[3/4] rounded-xl overflow-hidden group cursor-pointer border border-white/10 hover:border-white/30 transition-colors">
+<img class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105" data-alt="Three identical versions of the same person walking sequentially down a neon-lit street. The scene has a motion-blur effect between the figures. High-end cyberpunk visual style, moody lighting, dark aesthetics." src="https://lh3.googleusercontent.com/aida-public/AB6AXuC_2dnDyy_N3QR1cl09_0_XnH7W4dDNffxXpQcGAlWm2XYtZcelfwAAK0RDYwflRz8hjHidJzRkgx6nSsiArEho3SVSzM7BtNvzTBgWBc-GdECU4L1wqgIW6bgk95cFTfvjr7bLuNF3m_s67XKhvzlqy2ryZhMS91WxAJFTLXZIWw54RUk4a2mBUkoZjeHS32i-28mNfNPMAFVnRBSmdNdo44Yl9nlbxjm2H26h_Xgot75KEnCDvCBh8g"/>
+<div class="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent"></div>
+<div class="absolute bottom-sm left-sm">
+<span class="font-label-md text-label-md text-on-surface drop-shadow-md">Clone</span>
+</div>
+</div>
+<!-- Effect: Giant -->
+<div class="relative aspect-[3/4] rounded-xl overflow-hidden group cursor-pointer border border-white/10 hover:border-white/30 transition-colors">
+<img class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105" data-alt="A massive, colossal person towering over a futuristic city skyline. The perspective is from ground level looking up. Atmospheric depth, mist, dark and cinematic premium aesthetic." src="https://lh3.googleusercontent.com/aida-public/AB6AXuBkcahx2RjvXwrJDT2wm6jMh6c53hZUqE-nLN8m_EmQbhFJXAezDEKaJrtBMesNraNPI84ZoI9LYzNfXRpo0u-47EdzBP7H_ODfyoAORDfUP_WPYTggO71KXIbemFIHgYm1BziRpkPSimrHxq_AopNoUoVf2-Fw6WTbbjAVWHti65PVvxhwWPRasc8m3f4d29-XUuKIpb2esKklS561hQxyjo-7dpRHI1uxUvFYbQazSxS2RfhhZ5Aibw"/>
+<div class="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent"></div>
+<div class="absolute bottom-sm left-sm">
+<span class="font-label-md text-label-md text-on-surface drop-shadow-md">Giant</span>
+</div>
+</div>
+<!-- Effect: Tiny -->
+<div class="relative aspect-[3/4] rounded-xl overflow-hidden group cursor-pointer border border-white/10 hover:border-white/30 transition-colors">
+<img class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105" data-alt="A miniature person standing on the rim of a modern ceramic coffee cup. Macro photography style, shallow depth of field, sleek dark environment with high contrast lighting." src="https://lh3.googleusercontent.com/aida-public/AB6AXuDJEWWwo8uriRh9y7kUBVnxaVvEOWPkJwQUjq-WBmD__PTw6nJyIUZDyCwbX3ZaezjNQQ1TlUIOop0whOH6N8E9UaQyUciARaZQST6HL7pPRoAJlFuJa7ZVgI8xcoQ6PZXO2eW4Vhh1V2WHP0Z8fznFbh8aWrNno5VWBMbqHcSFCaubCwKPj-i5Z2Hu4N6yjCHkA3tXjOKKo8S9Y8qRGjF5kf_TeQaQ0QT7Etp0NZXwEL2OyUbfeqY2jw"/>
+<div class="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent"></div>
+<div class="absolute bottom-sm left-sm">
+<span class="font-label-md text-label-md text-on-surface drop-shadow-md">Tiny</span>
+</div>
+</div>
+<!-- Effect: Mirror -->
+<div class="relative aspect-[3/4] rounded-xl overflow-hidden group cursor-pointer border border-white/10 hover:border-white/30 transition-colors">
+<img class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105" data-alt="A split-screen kaleidoscope effect showing symmetrical reflections of a person in a high-tech environment. Geometric precision, sharp lines, deep blacks and bright electric cyan accents." src="https://lh3.googleusercontent.com/aida-public/AB6AXuAi_H1USElgyEcIAgyNL_ENzOcm64fwvdil_zJ_Nuzr-kDzdNqlu2aHpHWkWizf18awmHQ3cZDQ_Fyn5x51V_aHqvmOVKyZy8UJ8hLVtKBS78ZJeCWXHBS6b6rUkJYgWDWRtkndsBj5xuHqixmry5W3fpsmO8UUsA96iA5w9Q-5y3e--v2dbVqhz9j1U9_RsvqbdFJ2aTRpLNj2ITl3T1jIH4E9_-7zPY1PqzN_PSiIAwln3leqZxej5Q"/>
+<div class="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent"></div>
+<div class="absolute bottom-sm left-sm">
+<span class="font-label-md text-label-md text-on-surface drop-shadow-md">Mirror</span>
+</div>
+</div>
+<!-- Effect: Bounce -->
+<div class="relative aspect-[3/4] rounded-xl overflow-hidden group cursor-pointer border border-white/10 hover:border-white/30 transition-colors">
+<img class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105" data-alt="A dynamic motion preview showing a person caught in mid-air with visual echoes trailing behind them. High-energy, dynamic lighting, dark futuristic background." src="https://lh3.googleusercontent.com/aida-public/AB6AXuAS62b_dwVOr1K_uSH9fFrbrTlIq0hS1l2suBbXFBgMQhkSMDhOmlYM2ffMqPKUvQd7ltgUzz1AOrNh8KCrwcF_v6Ff1WhKKLM52BwVNty-4a-0YBB8SxvNGbD0qCloAHI-lgkH-Dtp4UWGj2aiLXTHZa58Epl6TfEV6UGr7H2dAOvMKCyhUxS046Tmb_95WFN0pCvz_4ccgT5Gn-bCgGpTFXtNVWqHQvP-ZdIgamGGRExUdoYE9Xc4Ww"/>
+<div class="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent"></div>
+<div class="absolute bottom-sm left-sm">
+<span class="font-label-md text-label-md text-on-surface drop-shadow-md">Bounce</span>
+</div>
+</div>
+</div>
+</div>
+</div>
+<!-- BottomNavBar JSON Render -->
+<nav class="bg-surface/20 backdrop-blur-xl fixed bottom-0 w-full z-50 border-t border-white/10 shadow-none flex justify-around items-center px-margin-mobile py-sm md:hidden">
+<button class="flex flex-col items-center justify-center text-on-surface-variant hover:text-primary transition-colors duration-200 active:scale-95 transition-transform group">
+<span class="material-symbols-outlined text-[24px]" data-weight="regular">home</span>
+<span class="font-label-sm text-label-sm mt-1">Home</span>
+</button>
+<button class="flex flex-col items-center justify-center text-primary drop-shadow-[0_0_8px_rgba(0,240,255,0.5)] hover:text-primary transition-colors duration-200 active:scale-95 transition-transform group">
+<span class="material-symbols-outlined text-[24px]" data-weight="fill" style="font-variation-settings: 'FILL' 1;">add_circle</span>
+<span class="font-label-sm text-label-sm mt-1">Create</span>
+</button>
+<button class="flex flex-col items-center justify-center text-on-surface-variant hover:text-primary transition-colors duration-200 active:scale-95 transition-transform group">
+<span class="material-symbols-outlined text-[24px]" data-weight="regular">auto_stories</span>
+<span class="font-label-sm text-label-sm mt-1">Library</span>
+</button>
+<button class="flex flex-col items-center justify-center text-on-surface-variant hover:text-primary transition-colors duration-200 active:scale-95 transition-transform group">
+<span class="material-symbols-outlined text-[24px]" data-weight="regular">person</span>
+<span class="font-label-sm text-label-sm mt-1">Profile</span>
+</button>
+</nav>
+</div>
+</body></html>

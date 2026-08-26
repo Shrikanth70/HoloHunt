@@ -1,0 +1,261 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" name="viewport"/>
+<title>VYRA - Home</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            "colors": {
+                    "on-secondary-fixed-variant": "#474649",
+                    "surface-container": "#192122",
+                    "on-secondary": "#303032",
+                    "error-container": "#93000a",
+                    "on-error-container": "#ffdad6",
+                    "surface-dim": "#0d1515",
+                    "surface-variant": "#2e3637",
+                    "on-primary": "#00363a",
+                    "secondary-container": "#474649",
+                    "error": "#ffb4ab",
+                    "secondary-fixed": "#e4e2e4",
+                    "surface-container-low": "#151d1e",
+                    "primary-fixed": "#7df4ff",
+                    "secondary": "#c8c6c8",
+                    "inverse-surface": "#dce4e5",
+                    "inverse-primary": "#006970",
+                    "surface": "#0d1515",
+                    "surface-container-highest": "#2e3637",
+                    "tertiary-container": "#dbd9db",
+                    "on-surface-variant": "#b9cacb",
+                    "secondary-fixed-dim": "#c8c6c8",
+                    "background": "#0d1515",
+                    "on-secondary-container": "#b7b4b7",
+                    "on-secondary-fixed": "#1b1b1d",
+                    "outline-variant": "#3b494b",
+                    "primary-fixed-dim": "#00dbe9",
+                    "on-tertiary-container": "#5f5e61",
+                    "on-tertiary-fixed-variant": "#474649",
+                    "on-surface": "#dce4e5",
+                    "surface-bright": "#333b3b",
+                    "on-tertiary": "#303032",
+                    "outline": "#849495",
+                    "tertiary-fixed": "#e4e2e4",
+                    "tertiary-fixed-dim": "#c8c6c8",
+                    "inverse-on-surface": "#2a3233",
+                    "on-primary-fixed-variant": "#004f54",
+                    "on-tertiary-fixed": "#1b1b1d",
+                    "tertiary": "#f8f5f8",
+                    "on-error": "#690005",
+                    "on-primary-fixed": "#002022",
+                    "surface-tint": "#00dbe9",
+                    "primary-container": "#00f0ff",
+                    "surface-container-high": "#232b2c",
+                    "surface-container-lowest": "#080f10",
+                    "on-primary-container": "#006970",
+                    "primary": "#dbfcff",
+                    "on-background": "#dce4e5"
+            },
+            "borderRadius": {
+                    "DEFAULT": "0.25rem",
+                    "lg": "0.5rem",
+                    "xl": "0.75rem",
+                    "full": "9999px"
+            },
+            "spacing": {
+                    "sm": "8px",
+                    "2xl": "48px",
+                    "lg": "24px",
+                    "unit": "8px",
+                    "gutter-mobile": "12px",
+                    "margin-mobile": "20px",
+                    "xs": "4px",
+                    "xl": "32px",
+                    "md": "16px"
+            },
+            "fontFamily": {
+                    "body-md": ["Inter"],
+                    "body-lg": ["Inter"],
+                    "label-sm": ["Inter"],
+                    "headline-md": ["Inter"],
+                    "display-lg": ["Inter"],
+                    "label-md": ["Inter"],
+                    "headline-lg": ["Inter"]
+            },
+            "fontSize": {
+                    "body-md": ["16px", {"lineHeight": "24px", "fontWeight": "400"}],
+                    "body-lg": ["18px", {"lineHeight": "28px", "fontWeight": "400"}],
+                    "label-sm": ["12px", {"lineHeight": "16px", "letterSpacing": "0.1em", "fontWeight": "600"}],
+                    "headline-md": ["24px", {"lineHeight": "32px", "fontWeight": "600"}],
+                    "display-lg": ["44px", {"lineHeight": "52px", "letterSpacing": "-0.02em", "fontWeight": "700"}],
+                    "label-md": ["14px", {"lineHeight": "20px", "letterSpacing": "0.05em", "fontWeight": "500"}],
+                    "headline-lg": ["32px", {"lineHeight": "40px", "letterSpacing": "-0.01em", "fontWeight": "600"}]
+            }
+          }
+        }
+      }
+    </script>
+<style>
+        body {
+            background-color: #0A0A0B;
+            color: #dce4e5;
+            -webkit-font-smoothing: antialiased;
+        }
+        .hide-scrollbar::-webkit-scrollbar {
+            display: none;
+        }
+        .hide-scrollbar {
+            -ms-overflow-style: none;
+            scrollbar-width: none;
+        }
+        .glass-overlay {
+            background: rgba(22, 22, 24, 0.2);
+            backdrop-filter: blur(20px);
+            -webkit-backdrop-filter: blur(20px);
+            border: 1px solid rgba(255, 255, 255, 0.08);
+        }
+        .glow-primary {
+            box-shadow: 0 0 12px rgba(0, 240, 255, 0.4);
+        }
+    </style>
+</head>
+<body class="bg-background text-on-background font-body-md pb-24 md:pb-0">
+<!-- TopAppBar -->
+<header class="fixed top-0 w-full z-50 bg-gradient-to-b from-black/60 to-transparent flex justify-between items-center px-margin-mobile h-16 md:hidden">
+<div class="flex items-center gap-md">
+<img class="w-8 h-8 rounded-full object-cover" data-alt="A small, stylized profile avatar of a young user in a neon-lit futuristic setting, dark theme." src="https://lh3.googleusercontent.com/aida-public/AB6AXuBCPKP8xyLaeAScBjMzwvS6it21oZ-5fonjfQrwj14c5KusH3BdGUBvjzofSyU3surxlWC3x4lECczDgkJqAoeMiPtAcAY7lsZTM6wFX2WI5DoAgHjSfuionhvOZMnTYruIIfD1ZH8BY2sTulD2uPffK_T4dS65bfpl_x3kt1DVEGWkKcs6hPGYIujZr5RmnAkuSGK7AUxV957cegeZ4iNUccoF9HZYTXGYsjD7ofWAcea64YDhVBz84g"/>
+</div>
+<div class="font-headline-lg text-headline-lg font-bold text-primary tracking-tighter">
+            VYRA
+        </div>
+<button class="text-on-surface hover:opacity-80 active:opacity-70 transition-opacity">
+<span class="material-symbols-outlined">drive_file_rename</span>
+</button>
+</header>
+<!-- Main Content Canvas -->
+<main class="w-full">
+<!-- Hero Section -->
+<section class="relative w-full h-[60vh] min-h-[400px] flex flex-col justify-end p-margin-mobile pb-xl">
+<!-- Immersive Background Image -->
+<div class="absolute inset-0 z-0">
+<img class="w-full h-full object-cover opacity-80" data-alt="A surreal augmented reality scene where a person stands in a dark void, interacting with glowing, electric cyan geometric holograms floating in mid-air. High contrast, cinematic lighting, futuristic minimalist style." src="https://lh3.googleusercontent.com/aida-public/AB6AXuAvTFLupN9ZP84G50s85yPxmDRpUKTr1iw_8P1bBQ5PChnRWq_CyLzMNgteBatLGVxvNcSbud3RUCWIIsPvG0TR6xVJWBe_PoF-77QAk_rSbwqZyLsmVyBTHOGLBrrMNklRdb-qtDu2VTOOWSeygNV6RCO9BdlbJOTdZDsiKLtnRV_l0po0kEbKk7Bdrd2XBgFJOeUwevuR-D9Tipq_WxkAStGEfp32wppR1aqu3e28narnpQLmNkD1JA"/>
+<div class="absolute inset-0 bg-gradient-to-t from-[#0A0A0B] via-transparent to-transparent"></div>
+</div>
+<!-- Hero Content -->
+<div class="relative z-10 max-w-2xl">
+<h1 class="font-display-lg text-display-lg text-white mb-sm drop-shadow-lg">Put anything anywhere.</h1>
+<p class="font-body-lg text-body-lg text-on-surface-variant mb-lg max-w-md drop-shadow-md">Turn your photos into things you can play with.</p>
+<div class="flex gap-md">
+<button class="bg-primary-container text-black font-label-md text-label-md px-lg py-sm rounded-lg hover:bg-primary transition-colors flex items-center justify-center min-w-[120px]">
+                        Create
+                    </button>
+<button class="bg-transparent border-[1.5px] border-white/20 text-white font-label-md text-label-md px-lg py-sm rounded-lg hover:bg-white/10 transition-colors flex items-center justify-center min-w-[120px]">
+                        Try AR
+                    </button>
+</div>
+</div>
+</section>
+<!-- Create Section -->
+<section class="px-margin-mobile mt-lg">
+<h2 class="font-headline-md text-headline-md text-white mb-md">Create something new</h2>
+<div class="flex gap-md overflow-x-auto hide-scrollbar pb-sm snap-x">
+<!-- Option 1 -->
+<div class="snap-start shrink-0 w-64 bg-surface-container rounded-xl p-md border border-white/10 flex flex-col items-start gap-sm hover:border-primary-container/50 transition-colors cursor-pointer group">
+<div class="w-10 h-10 rounded-full bg-surface-bright flex items-center justify-center group-hover:bg-primary-container/20 group-hover:text-primary-container transition-colors">
+<span class="material-symbols-outlined">view_in_ar</span>
+</div>
+<div>
+<h3 class="font-label-md text-label-md text-white mb-xs">AR</h3>
+<p class="font-label-sm text-label-sm text-on-surface-variant">Place it in the real world</p>
+</div>
+</div>
+<!-- Option 2 -->
+<div class="snap-start shrink-0 w-64 bg-surface-container rounded-xl p-md border border-white/10 flex flex-col items-start gap-sm hover:border-primary-container/50 transition-colors cursor-pointer group">
+<div class="w-10 h-10 rounded-full bg-surface-bright flex items-center justify-center group-hover:bg-primary-container/20 group-hover:text-primary-container transition-colors">
+<span class="material-symbols-outlined">content_cut</span>
+</div>
+<div>
+<h3 class="font-label-md text-label-md text-white mb-xs">Cutout</h3>
+<p class="font-label-sm text-label-sm text-on-surface-variant">Turn a photo into a subject</p>
+</div>
+</div>
+<!-- Option 3 -->
+<div class="snap-start shrink-0 w-64 bg-surface-container rounded-xl p-md border border-white/10 flex flex-col items-start gap-sm hover:border-primary-container/50 transition-colors cursor-pointer group">
+<div class="w-10 h-10 rounded-full bg-surface-bright flex items-center justify-center group-hover:bg-primary-container/20 group-hover:text-primary-container transition-colors">
+<span class="material-symbols-outlined">dynamic_feed</span>
+</div>
+<div>
+<h3 class="font-label-md text-label-md text-white mb-xs">Remix</h3>
+<p class="font-label-sm text-label-sm text-on-surface-variant">Create a visual scene</p>
+</div>
+</div>
+</div>
+</section>
+<!-- Divider -->
+<div class="w-full h-px bg-white/10 my-lg"></div>
+<!-- Creations Section -->
+<section class="px-margin-mobile mb-2xl">
+<h2 class="font-headline-md text-headline-md text-white mb-md">Your creations</h2>
+<div class="grid grid-cols-2 gap-md">
+<!-- Project 1 -->
+<div class="relative aspect-[3/4] rounded-xl overflow-hidden group cursor-pointer border border-white/10">
+<img class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" data-alt="A 3D rendering of a neon-lit cybernetic dog standing on a sleek black table, augmented reality creation, futuristic style, dark background." src="https://lh3.googleusercontent.com/aida-public/AB6AXuCLZh2NhHN55s8KJtSIPCueF_9TzaX49gFNGZUWkzfWdh8YwiSJZAcpKteXPetvP2usSfV2H-v_QgoyJF7fpW4gob7HM1OFl5oNVl_mnY9ZS1w4q1rQO9ni5s47HoL921CBE5xCAIDBhOJNnNXS9U64Un-AMRiri9WYl1q7ejb7yq_QxuK9KmAoKQcqxZm1-CSS6SU2eX-gi8lcu1Hu5YpwibUTUwfCWD6BVWTouHdEkZIxBbQD53CdUA"/>
+<div class="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity flex items-end p-sm">
+<span class="font-label-sm text-label-sm text-white">Cyber Dog v2</span>
+</div>
+</div>
+<!-- Project 2 -->
+<div class="relative aspect-[3/4] rounded-xl overflow-hidden group cursor-pointer border border-white/10">
+<img class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" data-alt="A floating, glowing geometric architectural structure hovering in an empty room, AR visual scene, high contrast electric cyan accents, dark environment." src="https://lh3.googleusercontent.com/aida-public/AB6AXuCCkjKeHl3UPYYPgWq-w9JN9rUGdmhq08fVEIy64DA1Ivmkn2iGpsmwPbuFmk3MUHesF5IfLbrbk5lOIVHet8mMhgYKbT9M7hgbwc2wWyWds5iFAqvc7ViVUwyDa0of0XzqD9PCGW7w7I16k6Hft8__PRAXSTBPictW7YUqPMeBkZ_qdplsGLTARsHxgBkKOCahNOSRBGdU_ksONJ2uW4FeFVIodPuCPcDqZ8kijxaArejVZ9wfnvjcVA"/>
+<div class="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity flex items-end p-sm">
+<span class="font-label-sm text-label-sm text-white">Arch_Remix</span>
+</div>
+</div>
+</div>
+</section>
+</main>
+<!-- BottomNavBar (Mobile Only) -->
+<nav class="fixed bottom-0 w-full z-50 bg-surface/20 backdrop-blur-xl border-t border-white/10 flex justify-around items-center px-margin-mobile py-sm md:hidden shadow-none">
+<!-- Active: Home -->
+<button class="flex flex-col items-center justify-center text-primary drop-shadow-[0_0_8px_rgba(0,240,255,0.5)] hover:text-primary transition-colors duration-200 active:scale-95 transition-transform">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">home</span>
+<span class="font-label-sm text-label-sm mt-xs">Home</span>
+</button>
+<!-- Inactive -->
+<button class="flex flex-col items-center justify-center text-on-surface-variant hover:text-primary transition-colors duration-200 active:scale-95 transition-transform">
+<span class="material-symbols-outlined">add_circle</span>
+<span class="font-label-sm text-label-sm mt-xs">Create</span>
+</button>
+<button class="flex flex-col items-center justify-center text-on-surface-variant hover:text-primary transition-colors duration-200 active:scale-95 transition-transform">
+<span class="material-symbols-outlined">auto_stories</span>
+<span class="font-label-sm text-label-sm mt-xs">Library</span>
+</button>
+<button class="flex flex-col items-center justify-center text-on-surface-variant hover:text-primary transition-colors duration-200 active:scale-95 transition-transform">
+<span class="material-symbols-outlined">person</span>
+<span class="font-label-sm text-label-sm mt-xs">Profile</span>
+</button>
+</nav>
+<!-- Desktop Navigation (Hidden on Mobile) -->
+<nav class="hidden md:flex fixed top-0 w-full z-50 bg-surface/20 backdrop-blur-xl border-b border-white/10 justify-between items-center px-2xl h-16">
+<div class="font-headline-lg text-headline-lg font-bold text-primary tracking-tighter">
+            VYRA
+        </div>
+<div class="flex gap-xl">
+<button class="text-primary font-label-md text-label-md drop-shadow-[0_0_8px_rgba(0,240,255,0.5)]">Home</button>
+<button class="text-on-surface-variant font-label-md text-label-md hover:text-primary transition-colors">Create</button>
+<button class="text-on-surface-variant font-label-md text-label-md hover:text-primary transition-colors">Library</button>
+</div>
+<div class="flex items-center gap-md">
+<button class="text-on-surface hover:opacity-80 transition-opacity">
+<span class="material-symbols-outlined">drive_file_rename</span>
+</button>
+<img class="w-8 h-8 rounded-full object-cover" data-alt="A small, stylized profile avatar of a young user in a neon-lit futuristic setting, dark theme." src="https://lh3.googleusercontent.com/aida-public/AB6AXuDb90gAdvS7cjpvWj4C24olSQci2fuVSzMWaUnvurc-rs-yY0l13b3b-ctQU4XSswY2VZX6R8OQfqTN7Rj_3iNXNqjJm1w0V36SN7TbYgl-4uxRQ-P-zapuA5ZsN4vjSu9MsLEtTtcTtGk9mMv-A_a3yFlDWJFF22n3-V8nqc0B6yw-MAGBZSt0oBKiTnd7ljJVqxYAzPTDAnyvhS_4NNlEeuyrk-0TT9lRSL8NgRox8WTUTViyuZo7Bw"/>
+</div>
+</nav>
+</body></html>

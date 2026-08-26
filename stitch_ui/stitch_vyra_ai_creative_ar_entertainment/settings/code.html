@@ -1,0 +1,232 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>VYRA Settings</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                            "on-background": "#dce4e5",
+                            "on-primary-container": "#006970",
+                            "on-error": "#690005",
+                            "primary-fixed-dim": "#00dbe9",
+                            "on-surface": "#dce4e5",
+                            "primary-container": "#00f0ff",
+                            "on-tertiary-fixed-variant": "#474649",
+                            "primary": "#dbfcff",
+                            "inverse-surface": "#dce4e5",
+                            "on-primary-fixed-variant": "#004f54",
+                            "on-secondary": "#303032",
+                            "inverse-on-surface": "#2a3233",
+                            "surface-variant": "#2e3637",
+                            "surface-container-highest": "#2e3637",
+                            "on-secondary-container": "#b7b4b7",
+                            "tertiary-container": "#dbd9db",
+                            "surface-bright": "#333b3b",
+                            "error": "#ffb4ab",
+                            "secondary-container": "#474649",
+                            "on-tertiary-container": "#5f5e61",
+                            "outline-variant": "#3b494b",
+                            "primary-fixed": "#7df4ff",
+                            "error-container": "#93000a",
+                            "on-tertiary": "#303032",
+                            "tertiary-fixed-dim": "#c8c6c8",
+                            "surface-dim": "#0d1515",
+                            "on-secondary-fixed": "#1b1b1d",
+                            "on-secondary-fixed-variant": "#474649",
+                            "secondary-fixed": "#e4e2e4",
+                            "secondary": "#c8c6c8",
+                            "secondary-fixed-dim": "#c8c6c8",
+                            "on-surface-variant": "#b9cacb",
+                            "background": "#0d1515",
+                            "on-tertiary-fixed": "#1b1b1d",
+                            "on-primary": "#00363a",
+                            "surface-tint": "#00dbe9",
+                            "surface-container-high": "#232b2c",
+                            "inverse-primary": "#006970",
+                            "outline": "#849495",
+                            "tertiary-fixed": "#e4e2e4",
+                            "surface-container-low": "#151d1e",
+                            "surface": "#0d1515",
+                            "surface-container-lowest": "#080f10",
+                            "surface-container": "#192122",
+                            "on-primary-fixed": "#002022",
+                            "on-error-container": "#ffdad6",
+                            "tertiary": "#f8f5f8"
+                    },
+                    "borderRadius": {
+                            "DEFAULT": "0.25rem",
+                            "lg": "0.5rem",
+                            "xl": "0.75rem",
+                            "full": "9999px"
+                    },
+                    "spacing": {
+                            "md": "16px",
+                            "xs": "4px",
+                            "sm": "8px",
+                            "margin-mobile": "20px",
+                            "unit": "8px",
+                            "xl": "32px",
+                            "gutter-mobile": "12px",
+                            "lg": "24px",
+                            "2xl": "48px"
+                    },
+                    "fontFamily": {
+                            "label-md": ["Inter"],
+                            "display-lg": ["Inter"],
+                            "body-md": ["Inter"],
+                            "headline-lg": ["Inter"],
+                            "label-sm": ["Inter"],
+                            "headline-md": ["Inter"],
+                            "body-lg": ["Inter"]
+                    },
+                    "fontSize": {
+                            "label-md": ["14px", {"lineHeight": "20px", "letterSpacing": "0.05em", "fontWeight": "500"}],
+                            "display-lg": ["44px", {"lineHeight": "52px", "letterSpacing": "-0.02em", "fontWeight": "700"}],
+                            "body-md": ["16px", {"lineHeight": "24px", "fontWeight": "400"}],
+                            "headline-lg": ["32px", {"lineHeight": "40px", "letterSpacing": "-0.01em", "fontWeight": "600"}],
+                            "label-sm": ["12px", {"lineHeight": "16px", "letterSpacing": "0.1em", "fontWeight": "600"}],
+                            "headline-md": ["24px", {"lineHeight": "32px", "fontWeight": "600"}],
+                            "body-lg": ["18px", {"lineHeight": "28px", "fontWeight": "400"}]
+                    }
+                },
+            },
+        }
+    </script>
+<style>
+        .toggle-checkbox:checked {
+            right: 0;
+            border-color: #00F0FF;
+        }
+        .toggle-checkbox:checked + .toggle-label {
+            background-color: #00F0FF;
+        }
+        .toggle-checkbox:checked + .toggle-label:before {
+            transform: translateX(100%);
+            background-color: #0d1515; /* background color */
+        }
+    </style>
+</head>
+<body class="bg-background text-on-background min-h-screen flex flex-col font-body-md selection:bg-primary-container selection:text-on-primary-container">
+<!-- Top Navigation (Contextual departure, hiding global nav) -->
+<header class="fixed top-0 w-full z-50 bg-background/80 backdrop-blur-md border-b border-white/5">
+<div class="flex justify-between items-center px-margin-mobile h-16 max-w-2xl mx-auto">
+<button class="text-on-surface hover:text-primary transition-colors flex items-center justify-center p-sm -ml-sm">
+<span class="material-symbols-outlined" data-icon="arrow_back" style="font-variation-settings: 'FILL' 0, 'wght' 300;">arrow_back</span>
+</button>
+<h1 class="font-headline-md text-headline-md text-primary tracking-tight">Settings</h1>
+<div class="w-[40px]"></div> <!-- Spacer for alignment -->
+</div>
+</header>
+<main class="flex-1 pt-[88px] pb-2xl px-margin-mobile max-w-2xl mx-auto w-full">
+<!-- Group: Account -->
+<section class="mb-xl">
+<h2 class="font-label-md text-label-md text-on-surface-variant mb-md uppercase tracking-widest pl-sm">Account</h2>
+<div class="bg-surface-container-low rounded-xl border border-white/[0.08] overflow-hidden flex flex-col shadow-[0_0_0_1px_rgba(255,255,255,0.02)_inset]">
+<div class="flex items-center justify-between p-md border-b border-white/[0.08] hover:bg-white/[0.02] transition-colors cursor-pointer group">
+<div class="flex items-center gap-md">
+<span class="material-symbols-outlined text-on-surface-variant group-hover:text-primary transition-colors" data-icon="person" style="font-variation-settings: 'FILL' 0, 'wght' 300;">person</span>
+<span class="font-body-md text-body-md text-on-surface">Profile Information</span>
+</div>
+<span class="material-symbols-outlined text-on-surface-variant" data-icon="chevron_right" style="font-variation-settings: 'FILL' 0, 'wght' 300;">chevron_right</span>
+</div>
+<div class="flex items-center justify-between p-md hover:bg-white/[0.02] transition-colors cursor-pointer group">
+<div class="flex items-center gap-md">
+<span class="material-symbols-outlined text-on-surface-variant group-hover:text-primary transition-colors" data-icon="lock" style="font-variation-settings: 'FILL' 0, 'wght' 300;">lock</span>
+<span class="font-body-md text-body-md text-on-surface">Security</span>
+</div>
+<span class="material-symbols-outlined text-on-surface-variant" data-icon="chevron_right" style="font-variation-settings: 'FILL' 0, 'wght' 300;">chevron_right</span>
+</div>
+</div>
+</section>
+<!-- Group: Preferences -->
+<section class="mb-xl">
+<h2 class="font-label-md text-label-md text-on-surface-variant mb-md uppercase tracking-widest pl-sm">Preferences</h2>
+<div class="bg-surface-container-low rounded-xl border border-white/[0.08] overflow-hidden flex flex-col shadow-[0_0_0_1px_rgba(255,255,255,0.02)_inset]">
+<div class="flex items-center justify-between p-md border-b border-white/[0.08] hover:bg-white/[0.02] transition-colors">
+<div class="flex items-center gap-md">
+<span class="material-symbols-outlined text-on-surface-variant" data-icon="wifi_off" style="font-variation-settings: 'FILL' 0, 'wght' 300;">wifi_off</span>
+<span class="font-body-md text-body-md text-on-surface">Offline Mode</span>
+</div>
+<!-- Custom Toggle -->
+<label class="relative inline-flex items-center cursor-pointer">
+<input checked="" class="sr-only peer toggle-checkbox" type="checkbox" value=""/>
+<div class="w-11 h-6 bg-surface-variant rounded-full peer peer-checked:after:translate-x-full peer-checked:after:border-white after:content-[''] after:absolute after:top-[2px] after:left-[2px] after:bg-white after:border-gray-300 after:border after:rounded-full after:h-5 after:w-5 after:transition-all peer-checked:bg-primary-container toggle-label"></div>
+</label>
+</div>
+<div class="flex items-center justify-between p-md hover:bg-white/[0.02] transition-colors cursor-pointer group">
+<div class="flex items-center gap-md">
+<span class="material-symbols-outlined text-on-surface-variant group-hover:text-primary transition-colors" data-icon="memory" style="font-variation-settings: 'FILL' 0, 'wght' 300;">memory</span>
+<div class="flex flex-col">
+<span class="font-body-md text-body-md text-on-surface">AI Processing</span>
+<span class="font-label-sm text-label-sm text-on-surface-variant mt-xs normal-case tracking-normal font-normal">Automatic</span>
+</div>
+</div>
+<span class="material-symbols-outlined text-on-surface-variant" data-icon="chevron_right" style="font-variation-settings: 'FILL' 0, 'wght' 300;">chevron_right</span>
+</div>
+</div>
+</section>
+<!-- Group: Data -->
+<section class="mb-xl">
+<h2 class="font-label-md text-label-md text-on-surface-variant mb-md uppercase tracking-widest pl-sm">Data</h2>
+<div class="bg-surface-container-low rounded-xl border border-white/[0.08] overflow-hidden flex flex-col shadow-[0_0_0_1px_rgba(255,255,255,0.02)_inset]">
+<div class="flex items-center justify-between p-md border-b border-white/[0.08] hover:bg-white/[0.02] transition-colors cursor-pointer group">
+<div class="flex items-center gap-md">
+<span class="material-symbols-outlined text-on-surface-variant group-hover:text-primary transition-colors" data-icon="storage" style="font-variation-settings: 'FILL' 0, 'wght' 300;">storage</span>
+<span class="font-body-md text-body-md text-on-surface">Storage</span>
+</div>
+<span class="material-symbols-outlined text-on-surface-variant" data-icon="chevron_right" style="font-variation-settings: 'FILL' 0, 'wght' 300;">chevron_right</span>
+</div>
+<div class="flex items-center justify-between p-md border-b border-white/[0.08] hover:bg-white/[0.02] transition-colors cursor-pointer group">
+<div class="flex items-center gap-md">
+<span class="material-symbols-outlined text-on-surface-variant group-hover:text-primary transition-colors" data-icon="key" style="font-variation-settings: 'FILL' 0, 'wght' 300;">key</span>
+<span class="font-body-md text-body-md text-on-surface">Permissions</span>
+</div>
+<span class="material-symbols-outlined text-on-surface-variant" data-icon="chevron_right" style="font-variation-settings: 'FILL' 0, 'wght' 300;">chevron_right</span>
+</div>
+<div class="flex items-center justify-between p-md hover:bg-white/[0.02] transition-colors cursor-pointer group">
+<div class="flex items-center gap-md">
+<span class="material-symbols-outlined text-on-surface-variant group-hover:text-primary transition-colors" data-icon="shield" style="font-variation-settings: 'FILL' 0, 'wght' 300;">shield</span>
+<span class="font-body-md text-body-md text-on-surface">Privacy</span>
+</div>
+<span class="material-symbols-outlined text-on-surface-variant" data-icon="chevron_right" style="font-variation-settings: 'FILL' 0, 'wght' 300;">chevron_right</span>
+</div>
+</div>
+</section>
+<!-- Group: App -->
+<section class="mb-xl">
+<h2 class="font-label-md text-label-md text-on-surface-variant mb-md uppercase tracking-widest pl-sm">App</h2>
+<div class="bg-surface-container-low rounded-xl border border-white/[0.08] overflow-hidden flex flex-col shadow-[0_0_0_1px_rgba(255,255,255,0.02)_inset]">
+<div class="flex items-center justify-between p-md border-b border-white/[0.08] hover:bg-white/[0.02] transition-colors cursor-pointer group">
+<div class="flex items-center gap-md">
+<span class="material-symbols-outlined text-on-surface-variant group-hover:text-primary transition-colors" data-icon="info" style="font-variation-settings: 'FILL' 0, 'wght' 300;">info</span>
+<span class="font-body-md text-body-md text-on-surface">About VYRA</span>
+</div>
+<span class="material-symbols-outlined text-on-surface-variant" data-icon="chevron_right" style="font-variation-settings: 'FILL' 0, 'wght' 300;">chevron_right</span>
+</div>
+<div class="flex items-center justify-between p-md hover:bg-white/[0.02] transition-colors cursor-pointer group">
+<div class="flex items-center gap-md">
+<span class="material-symbols-outlined text-on-surface-variant group-hover:text-primary transition-colors" data-icon="help" style="font-variation-settings: 'FILL' 0, 'wght' 300;">help</span>
+<span class="font-body-md text-body-md text-on-surface">Support</span>
+</div>
+<span class="material-symbols-outlined text-on-surface-variant" data-icon="chevron_right" style="font-variation-settings: 'FILL' 0, 'wght' 300;">chevron_right</span>
+</div>
+</div>
+</section>
+<!-- Log Out -->
+<div class="mt-2xl flex justify-center">
+<button class="font-body-lg text-body-lg text-error/80 hover:text-error transition-colors flex items-center gap-sm">
+<span class="material-symbols-outlined text-[20px]" data-icon="logout" style="font-variation-settings: 'FILL' 0, 'wght' 400;">logout</span>
+                Log Out
+            </button>
+</div>
+</main>
+</body></html>

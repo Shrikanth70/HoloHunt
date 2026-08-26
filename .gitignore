@@ -1,0 +1,33 @@
+# Android / Gradle
+*.iml
+.gradle/
+/local.properties
+/.idea/
+.DS_Store
+/build
+/captures
+.externalNativeBuild
+.cxx
+*.apk
+*.aab
+*.ap_
+*.dex
+
+# Kotlin
+.kotlin/
+
+# Build outputs
+**/build/
+
+# Keystore / secrets (never commit)
+*.jks
+*.keystore
+keystore.properties
+secrets.properties
+*.env
+
+# Logs
+*.log
+
+# OS
+Thumbs.db

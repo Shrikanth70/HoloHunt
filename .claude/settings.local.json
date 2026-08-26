@@ -1,0 +1,15 @@
+{
+  "permissions": {
+    "allow": [
+      "Read(//c/Users/Bhukya Shrikanth/.gradle/wrapper/dists/**)",
+      "Read(//c/Program Files/Android/Android Studio/plugins/gradle/**)",
+      "Read(//c//**)",
+      "Bash(curl -s -o /dev/null -w \"google-maven HTTP %{http_code} in %{time_total}s\\\\n\" --max-time 12 https://dl.google.com/dl/android/maven2/com/android/tools/build/gradle/8.7.3/gradle-8.7.3.pom)",
+      "Bash(set -e)",
+      "Bash(mkdir -p __TRACKED_VAR__/gradle/wrapper)",
+      "Bash(cp __TRACKED_VAR__/gradle/wrapper/gradle-wrapper.jar __TRACKED_VAR__/gradle/wrapper/gradle-wrapper.jar)",
+      "Bash(cp __TRACKED_VAR__/gradlew __TRACKED_VAR__/gradlew)",
+      "Bash(cp __TRACKED_VAR__/gradlew.bat __TRACKED_VAR__/gradlew.bat)"
+    ]
+  }
+}

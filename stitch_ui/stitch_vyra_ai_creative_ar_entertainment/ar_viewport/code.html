@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" name="viewport"/>
+<title>VYRA - AR Mode</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "on-secondary-fixed-variant": "#474649",
+                        "surface-container": "#192122",
+                        "on-secondary": "#303032",
+                        "error-container": "#93000a",
+                        "on-error-container": "#ffdad6",
+                        "surface-dim": "#0d1515",
+                        "surface-variant": "#2e3637",
+                        "on-primary": "#00363a",
+                        "secondary-container": "#474649",
+                        "error": "#ffb4ab",
+                        "secondary-fixed": "#e4e2e4",
+                        "surface-container-low": "#151d1e",
+                        "primary-fixed": "#7df4ff",
+                        "secondary": "#c8c6c8",
+                        "inverse-surface": "#dce4e5",
+                        "inverse-primary": "#006970",
+                        "surface": "#0d1515",
+                        "surface-container-highest": "#2e3637",
+                        "tertiary-container": "#dbd9db",
+                        "on-surface-variant": "#b9cacb",
+                        "secondary-fixed-dim": "#c8c6c8",
+                        "background": "#0d1515",
+                        "on-secondary-container": "#b7b4b7",
+                        "on-secondary-fixed": "#1b1b1d",
+                        "outline-variant": "#3b494b",
+                        "primary-fixed-dim": "#00dbe9",
+                        "on-tertiary-container": "#5f5e61",
+                        "on-tertiary-fixed-variant": "#474649",
+                        "on-surface": "#dce4e5",
+                        "surface-bright": "#333b3b",
+                        "on-tertiary": "#303032",
+                        "outline": "#849495",
+                        "tertiary-fixed": "#e4e2e4",
+                        "tertiary-fixed-dim": "#c8c6c8",
+                        "inverse-on-surface": "#2a3233",
+                        "on-primary-fixed-variant": "#004f54",
+                        "on-tertiary-fixed": "#1b1b1d",
+                        "tertiary": "#f8f5f8",
+                        "on-error": "#690005",
+                        "on-primary-fixed": "#002022",
+                        "surface-tint": "#00dbe9",
+                        "primary-container": "#00f0ff",
+                        "surface-container-high": "#232b2c",
+                        "surface-container-lowest": "#080f10",
+                        "on-primary-container": "#006970",
+                        "primary": "#dbfcff",
+                        "on-background": "#dce4e5"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.25rem",
+                        "lg": "0.5rem",
+                        "xl": "0.75rem",
+                        "full": "9999px"
+                    },
+                    "spacing": {
+                        "sm": "8px",
+                        "2xl": "48px",
+                        "lg": "24px",
+                        "unit": "8px",
+                        "gutter-mobile": "12px",
+                        "margin-mobile": "20px",
+                        "xs": "4px",
+                        "xl": "32px",
+                        "md": "16px"
+                    },
+                    "fontFamily": {
+                        "body-md": ["Inter"],
+                        "body-lg": ["Inter"],
+                        "label-sm": ["Inter"],
+                        "headline-md": ["Inter"],
+                        "display-lg": ["Inter"],
+                        "label-md": ["Inter"],
+                        "headline-lg": ["Inter"]
+                    },
+                    "fontSize": {
+                        "body-md": ["16px", { "lineHeight": "24px", "fontWeight": "400" }],
+                        "body-lg": ["18px", { "lineHeight": "28px", "fontWeight": "400" }],
+                        "label-sm": ["12px", { "lineHeight": "16px", "letterSpacing": "0.1em", "fontWeight": "600" }],
+                        "headline-md": ["24px", { "lineHeight": "32px", "fontWeight": "600" }],
+                        "display-lg": ["44px", { "lineHeight": "52px", "letterSpacing": "-0.02em", "fontWeight": "700" }],
+                        "label-md": ["14px", { "lineHeight": "20px", "letterSpacing": "0.05em", "fontWeight": "500" }],
+                        "headline-lg": ["32px", { "lineHeight": "40px", "letterSpacing": "-0.01em", "fontWeight": "600" }]
+                    }
+                }
+            }
+        }
+    </script>
+<style>
+        body {
+            overscroll-behavior-y: none;
+        }
+        .ar-grid {
+            background-image: 
+                linear-gradient(to right, rgba(255, 255, 255, 0.05) 1px, transparent 1px),
+                linear-gradient(to bottom, rgba(255, 255, 255, 0.05) 1px, transparent 1px);
+            background-size: 40px 40px;
+            transform: perspective(500px) rotateX(60deg) scale(2);
+            transform-origin: bottom center;
+        }
+        .shimmer {
+            background: linear-gradient(90deg, transparent, rgba(255,255,255,0.2), transparent);
+            background-size: 200% 100%;
+            animation: shimmer 2s infinite linear;
+        }
+        @keyframes shimmer {
+            0% { background-position: 200% 0; }
+            100% { background-position: -200% 0; }
+        }
+    </style>
+</head>
+<body class="bg-background text-on-background h-screen w-screen overflow-hidden flex flex-col font-body-md relative">
+<!-- AR Camera View (Simulated Background) -->
+<div class="absolute inset-0 z-0">
+<div class="w-full h-full bg-cover bg-center" data-alt="A cinematic, slightly blurred background showing a modern, dimly lit urban street or studio space. The lighting is moody with subtle neon reflections, creating a perfect high-contrast environment for an augmented reality object to stand out. Deep blacks and cool charcoal tones dominate, consistent with a futuristic minimalist aesthetic." style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuC8NltV8i76-rDLsDbF061SkUyyvoL3vjiFyT9sjt6FJw20pDzsG3aNUKt-o_jMWi2LGp27wIw0QVMBdUxyrEICwkS0_0GPEX5_tRnOtmvEbmyqfIK5HYfScmU8JyeqaYnwrRP2yel9xhpgYyQE2OTbaL7uvFw3A3KmQxEcMqQHrvbCZEqp9Q3lc_Xf4R69wMRriYNWPFZTF1pLgFOVqMXT1lGqYWouNvfjVghyJNsUbCdQKyjDF6oU_A')"></div>
+<!-- AR Floor Grid Projection -->
+<div class="absolute bottom-0 w-full h-1/2 ar-grid pointer-events-none"></div>
+<!-- AR Subject Anchor Shadow -->
+<div class="absolute bottom-[30%] left-1/2 -translate-x-1/2 w-64 h-16 bg-primary/20 rounded-[100%] blur-xl pointer-events-none"></div>
+<!-- AR Subject (Simulated) -->
+<div class="absolute bottom-[35%] left-1/2 -translate-x-1/2 w-3/4 max-w-sm pointer-events-none">
+<img class="w-full h-auto drop-shadow-[0_0_24px_rgba(0,240,255,0.3)] animate-[bounce_4s_ease-in-out_infinite]" data-alt="A highly detailed, futuristic 3D rendered sneaker floating slightly above the ground. The sneaker features glowing electric cyan accents and sleek, dark matte materials. It looks like a premium digital asset or NFT, sharply focused against the blurred background. The lighting highlights its complex geometry and textures." src="https://lh3.googleusercontent.com/aida-public/AB6AXuAeXsbw-V8FyaKoAHrpiXCtqYUVSYjHFXmEKhUcb-PZrz8tw9jsbfk7WuaYtOfXrwAiOmXYL4BztSaZvOPj9TAjfkHYCKT9zUaa186ZUIL3deYRFl5fmn202zqRiCDwQwUv_pNiAkJ0veZ92ZI38B7UmONvGVqVZiapYoL5VvZj8niK8Yk_dF3R0k2paqOB2rPA5ZkVC90I7JRgMUj7os61jDs8d_DgVBefBAwa9DfafTyoahzQl8lQkw"/>
+</div>
+</div>
+<!-- Top Navigation Layer -->
+<div class="absolute top-0 w-full z-10 px-margin-mobile pt-12 pb-md bg-gradient-to-b from-black/60 to-transparent flex justify-between items-center">
+<button class="w-12 h-12 rounded-full bg-surface-container/50 backdrop-blur-md border border-white/10 flex items-center justify-center text-on-surface hover:text-primary transition-colors">
+<span class="material-symbols-outlined" style="font-variation-settings: 'wght' 300;">close</span>
+</button>
+<div class="px-md py-sm rounded-full bg-surface-container/50 backdrop-blur-md border border-white/10 flex items-center gap-sm">
+<span class="w-2 h-2 rounded-full bg-error animate-pulse"></span>
+<span class="font-label-sm text-label-sm text-on-surface tracking-wider">AR ACTIVE</span>
+</div>
+<button class="w-12 h-12 rounded-full bg-surface-container/50 backdrop-blur-md border border-white/10 flex items-center justify-center text-on-surface hover:text-primary transition-colors">
+<span class="material-symbols-outlined" style="font-variation-settings: 'wght' 300;">view_in_ar</span>
+</button>
+</div>
+<!-- Bottom Controls Layer -->
+<div class="absolute bottom-0 w-full z-10 pb-12 pt-xl bg-gradient-to-t from-black/80 via-black/40 to-transparent flex flex-col items-center">
+<!-- Subject Selector Strip -->
+<div class="w-full overflow-x-auto no-scrollbar px-margin-mobile mb-lg flex gap-md snap-x snap-mandatory">
+<!-- Active Item -->
+<div class="snap-center shrink-0 w-20 h-20 rounded-xl bg-surface-container border border-primary relative overflow-hidden">
+<div class="absolute inset-0 shadow-[inset_0_0_12px_rgba(0,240,255,0.3)]"></div>
+<img class="w-full h-full object-cover p-sm" data-alt="A small thumbnail showing a side profile of a futuristic digital sneaker with glowing cyan elements against a dark background." src="https://lh3.googleusercontent.com/aida-public/AB6AXuAxJudXS_h586hItdW2cpmmJJyJupgzFO-ABVPbO61PpW2v_dJlzmkyzaTemOCgMFFFJNSPvYrHryayNI1nHlE5eqSrR4k9_VYnbOWhU1MzXSN2wPTo2PjMi5WAfU52DJeD0LWEQviSvwNVRS1fVV2Fd3slJQ2PINtMb7z-p-EYzCVqlMjWQro34qvigfvAJQJazMHwoKvqs4WFzx1PE-_UEiTKWrFTcn6AV3j0Ci9w7y4-i1yGGgcdrA"/>
+</div>
+<!-- Inactive Items -->
+<div class="snap-center shrink-0 w-20 h-20 rounded-xl bg-surface-container/50 backdrop-blur-sm border border-white/10 overflow-hidden opacity-70 hover:opacity-100 transition-opacity">
+<img class="w-full h-full object-cover p-sm opacity-80" data-alt="A small thumbnail showing a stylized digital avatar character wearing streetwear, rendered in high quality against a dark background." src="https://lh3.googleusercontent.com/aida-public/AB6AXuCVnygBeahKrAStNch8An-tddb1TOb_tSsedzgzYktbn630UcfnfaKSmlzA9wFrzujoLOzINhTycyyEj8PqQlH-ISlSpnhV9uRKAY8NO10LbEVg5dXefmHuOQkzmijF04lI3IYPyTAZ7Bau-HwcTIqpGO1f_ZOdIKMUVerAYVxhvBHyPY59ejj01yETlrxSVuiKsXNXtSmydiL30jkMxdYxIOHUkMiUS9yLgoZpcpAnhOkofcfznC0qsg"/>
+</div>
+<div class="snap-center shrink-0 w-20 h-20 rounded-xl bg-surface-container/50 backdrop-blur-sm border border-white/10 overflow-hidden opacity-70 hover:opacity-100 transition-opacity">
+<img class="w-full h-full object-cover p-sm opacity-80" data-alt="A small thumbnail showing an abstract geometric 3D sculpture in dark chrome and bright blue lighting." src="https://lh3.googleusercontent.com/aida-public/AB6AXuD6LvATjzsADfWd0lqVDaD6cKChPGMSLe3MjWro_xaxDRIFmgpzCQd6sIMJFNba1wh4UiV9Dw4xZUU6Qqm-Ugr4PxKn6SSrfnfTigZJTUEx-ob9VPmNQb01hW03CWF7N55xRG3ffysxySrfXVMWtgjW2SUE898HTdKe7pHyHRhUsynVh5R0e4soqR5DfNAeCQHGzNtOxfOnamf-vJ7TVRx3sRHQ_wNdgmY92tRw9ovIdW73qjmGnLZKkQ"/>
+</div>
+<div class="snap-center shrink-0 w-20 h-20 rounded-xl bg-surface-container/50 backdrop-blur-sm border border-white/10 overflow-hidden opacity-70 hover:opacity-100 transition-opacity flex items-center justify-center">
+<span class="material-symbols-outlined text-on-surface-variant">add</span>
+</div>
+</div>
+<!-- Main Action Bar -->
+<div class="flex items-center justify-center gap-xl px-margin-mobile w-full max-w-sm">
+<button class="w-12 h-12 flex items-center justify-center text-on-surface hover:text-primary transition-colors">
+<span class="material-symbols-outlined" style="font-variation-settings: 'wght' 300;">auto_awesome</span>
+</button>
+<!-- Capture Button -->
+<div class="relative flex items-center justify-center">
+<div class="absolute inset-0 rounded-full border-2 border-primary/30 animate-[ping_2s_cubic-bezier(0,0,0.2,1)_infinite]"></div>
+<button class="w-20 h-20 rounded-full bg-transparent border-4 border-primary flex items-center justify-center hover:scale-95 transition-transform active:scale-90 group relative z-10">
+<div class="w-14 h-14 rounded-full bg-primary/20 group-hover:bg-primary/40 transition-colors flex items-center justify-center backdrop-blur-sm">
+<div class="w-10 h-10 rounded-full bg-primary drop-shadow-[0_0_12px_rgba(0,240,255,0.8)]"></div>
+</div>
+</button>
+</div>
+<button class="w-12 h-12 flex items-center justify-center text-on-surface hover:text-primary transition-colors">
+<span class="material-symbols-outlined" style="font-variation-settings: 'wght' 300;">tune</span>
+</button>
+</div>
+</div>
+<!-- Style for hiding scrollbar -->
+<style>
+        .no-scrollbar::-webkit-scrollbar {
+            display: none;
+        }
+        .no-scrollbar {
+            -ms-overflow-style: none;
+            scrollbar-width: none;
+        }
+    </style>
+</body></html>
